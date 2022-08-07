@@ -45,6 +45,8 @@ INSTALLED_APPS = [
 
     #3rd party
     'rest_framework',
+    'rest_framework.authtoken',
+    'dj_rest_auth',
 ]
 
 REST_FRAMEWORK = {
@@ -52,6 +54,13 @@ REST_FRAMEWORK = {
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated'
+    ]
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
     ]
 }
 
